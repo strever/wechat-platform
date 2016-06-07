@@ -14,3 +14,10 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+/**
+ * m.wechat.sayhey.cn
+ */
+Route::group(['domain' => env('APP_DOMAIN_M'), 'namespace' => 'Mobile'], function() {
+    Route::get('register', 'CreditCard\Register@index');
+});
